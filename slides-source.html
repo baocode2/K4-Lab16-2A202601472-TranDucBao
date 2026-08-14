@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: 33.867cm 19.05cm; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { font-family: "Segoe UI", Arial, sans-serif; color: #16192280; }
+  body { color: #161922; }
+  .slide {
+    width: 33.867cm; height: 19.05cm; padding: 1.25cm 1.7cm;
+    page-break-after: always; position: relative; overflow: hidden;
+    display: flex; flex-direction: column; background: #fff;
+  }
+  .slide:last-child { page-break-after: auto; }
+  .kicker { color: #5b4cf5; font-weight: 700; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
+  h1 { font-size: 50px; line-height: 1.06; margin: .22cm 0; color: #0d1018; letter-spacing: -.5px; }
+  h2 { font-size: 33px; color: #0d1018; margin-bottom: .28cm; letter-spacing: -.3px; }
+  .bar { height: 5px; width: 78px; background: #5b4cf5; border-radius: 3px; margin: .16cm 0 .42cm; }
+  .foot { position: absolute; bottom: .62cm; left: 1.7cm; right: 1.7cm; display: flex; justify-content: space-between;
+          font-size: 12px; color: #949aa8; border-top: 1px solid #e8eaf1; padding-top: 7px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 7px 9px; vertical-align: top; border-bottom: 1px solid #e8eaf1; font-size: 13.5px; line-height: 1.34; }
+  th { background: #f2f1ff; color: #372a9e; font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; }
+  td.d { font-weight: 700; color: #5b4cf5; white-space: nowrap; font-size: 13px; }
+  .pr { color: #0a7355; font-weight: 700; }
+  ul { margin-left: 19px; } li { font-size: 17.5px; line-height: 1.48; margin-bottom: 8px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: .6cm; }
+  .card { background: #f8f9fd; border: 1px solid #e8eaf1; border-radius: 13px; padding: .5cm .55cm; }
+  .card h3 { font-size: 18.5px; color: #5b4cf5; margin-bottom: 7px; }
+  .card p { font-size: 14.5px; line-height: 1.45; margin-bottom: 7px; }
+  .forces { display: grid; grid-template-columns: 1fr 1fr; gap: .4cm; }
+  .f { border-radius: 11px; padding: .4cm .5cm; font-size: 14.5px; line-height: 1.4; }
+  .f b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; color: #4a4f60; }
+  .fa { background: #fdeceb; } .fb { background: #e8f6ef; } .fc { background: #fff6e5; } .fd { background: #edeeff; }
+  .pred { background: #f8f9fd; border-left: 4px solid #5b4cf5; border-radius: 9px; padding: .36cm .5cm; margin-bottom: .28cm; }
+  .pred .t { font-weight: 700; font-size: 16px; margin-bottom: 3px; }
+  .pred .t span { background: #5b4cf5; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 99px; margin-left: 7px; vertical-align: middle; font-weight: 600; }
+  .pred .a { font-size: 13.5px; color: #3c4152; line-height: 1.42; }
+  .ctr { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .sub { font-size: 22px; color: #4a5064; margin-top: .26cm; }
+  .meta { font-size: 16px; color: #737a8b; margin-top: .8cm; line-height: 1.6; }
+  .big { font-size: 18.5px; line-height: 1.5; }
+  .note { font-size: 14px; color: #737a8b; margin-top: .35cm; }
+  .tag { display:inline-block; background:#eef0f6; color:#4a4f60; border-radius:99px; padding:2px 9px; font-size:11.5px; font-weight:600; }
+  .warn { background:#fff6e5; border-left:4px solid #d99100; border-radius:9px; padding:.34cm .5cm; font-size:14.5px; line-height:1.44; }
+</style>
+</head>
+<body>
+
+<!-- 1 TITLE -->
+<div class="slide">
+  <div class="ctr">
+    <div class="kicker">Product Teardown · Lab 16</div>
+    <h1>Cursor<br>Đọc sản phẩm như một chuỗi quyết định</h1>
+    <div class="sub">Từ autocomplete đoán trước → tới việc thay thế cả GitHub</div>
+    <div class="meta">
+      <b>Nhóm B2</b> — Khóa 3 (K3)<br>
+      Lê Quang Huy (A) · Trần Đức Bảo (B) · Đàm Việt Cường (C) · Hoàng Minh Quân (D)
+    </div>
+  </div>
+  <div class="foot"><span>Cursor Teardown</span><span>1</span></div>
+</div>
+
+<!-- 2 WHY -->
+<div class="slide">
+  <div class="kicker">Step 0 · CP0</div>
+  <h2>Vì sao chọn Cursor</h2>
+  <div class="bar"></div>
+  <div class="big"><ul>
+    <li><b>AI là lõi, không phải lớp phủ</b> — toàn bộ giá trị nằm ở tầng AI dựng trên bản fork VS Code.</li>
+    <li><b>Dữ liệu công khai dày</b> — changelog có ngày và số hiệu bản, Wikipedia, transcript founder, thread HN.</li>
+    <li><b>JTBD rõ</b> — tách được tệp early adopter và tệp doanh nghiệp hiện tại.</li>
+  </ul></div>
+  <div class="two" style="margin-top:.5cm">
+    <div class="card">
+      <h3>Cách nhóm chia việc</h3>
+      <p><b>A</b> — Changelog &amp; blog chính thức → §1<br>
+      <b>B</b> — Product Hunt &amp; Hacker News → §1 context, §2<br>
+      <b>C</b> — Tweet &amp; phát biểu founder → §1 nguyên lý, §3<br>
+      <b>D</b> — Báo chí &amp; Reddit → §1, §2</p>
+    </div>
+    <div class="card">
+      <h3>Quy tắc nguồn tự đặt</h3>
+      <p>Mỗi mốc phải có <b>link nguồn gốc tự mở</b>. Nguồn tổng hợp bên thứ ba (releasebot, PromptLayer) chỉ dùng để <b>phát hiện</b> mốc, không được dẫn trong memo.</p>
+      <p style="margin-bottom:0"><span class="tag">Đã loại 2 mốc vì vi phạm quy tắc này</span></p>
+    </div>
+  </div>
+  <div class="foot"><span>Cursor Teardown</span><span>2</span></div>
+</div>
+
+<!-- 3 TIMELINE -->
+<div class="slide">
+  <div class="kicker">§1 · CP1</div>
+  <h2>Timeline — 8 quyết định sản phẩm</h2>
+  <div class="bar"></div>
+  <table>
+    <tr><th style="width:11%">Thời điểm</th><th style="width:31%">Cập nhật</th><th style="width:29%">Context lúc đó</th><th style="width:29%">Nguyên lý</th></tr>
+    <tr><td class="d">03/2023</td><td><b>Ra mắt</b> — AI-first, fork VS Code; lõi là <b>Cursor Tab</b> đoán trước cả một thay đổi mạch lạc</td><td>ChatGPT vừa ra; Copilot thống trị; nhóm MIT vừa pivot khỏi dự án AI cơ khí</td><td class="pr">wrapper/moat + định nghĩa "tốt"</td></tr>
+    <tr><td class="d">07→11/2024</td><td><b>Cung Composer</b> — v0.37 sửa nhiều file, v0.43 cấy mầm agent tự chọn ngữ cảnh &amp; chạy terminal</td><td>GPT-4/Claude 3 suy luận được đa file; Series A $60M; mua Supermaven; Devin gây sốt</td><td class="pr">Vertical AI → vòng lặp học + x10</td></tr>
+    <tr><td class="d">15/05/2025</td><td><b>v0.50 Background Agent</b> chạy nền/song song + gộp pricing về request</td><td>$100M ARR; đua agent nền với Codex, Claude Code; vừa qua sự cố bot "Sam"</td><td class="pr">vòng lặp học</td></tr>
+    <tr><td class="d">04/06/2025</td><td><b>v1.0</b> — Bugbot tự review PR, Agent mở cho mọi user, MCP 1-click</td><td>$500M ARR; Series C $900M, định giá $9.9B</td><td class="pr">wrapper/moat (nền tảng)</td></tr>
+    <tr><td class="d">16/06→07/2025</td><td><b>Đổi pricing</b> → usage-metered → backlash → <b>rollback</b> + hoàn tiền</td><td>Chi phí model ép biên lợi nhuận; thread HN 84đ/89 cmt — tranh cãi lớn nhất timeline</td><td class="pr">định nghĩa "tốt" + vòng lặp học</td></tr>
+    <tr><td class="d">29/10/2025</td><td><b>Cursor 2.0</b> — model Composer tự huấn luyện + 8 agent song song</td><td>Series D $2.3B, định giá $29.3B; đồng sáng lập rời đi</td><td class="pr">Vertical AI + x10</td></tr>
+    <tr><td class="d">02/04/2026</td><td><b>Cursor 3.0 Agents Window</b> — giao diện agent-first, <b>IDE bị hạ xuống một pane</b></td><td>~$3B ARR, 64% Fortune 500; cộng đồng gào "Cursor is dead"</td><td class="pr">định nghĩa "tốt" (tự đảo lại) + x10</td></tr>
+    <tr><td class="d">16/06/2026</td><td><b>Origin</b> — git forge cho kỷ nguyên agent, <b>thay thế chính GitHub</b></td><td>GitHub không thiết kế cho hàng nghìn agent; cùng ngày SpaceX mua lại $60B</td><td class="pr">wrapper/moat (đào xuống) + x10</td></tr>
+  </table>
+  <div class="foot"><span>Nguồn gốc: cursor.com/changelog · cursor.com/origin · Wikipedia · Hacker News · TechCrunch</span><span>3</span></div>
+</div>
+
+<!-- 4 PRINCIPLE ARC -->
+<div class="slide">
+  <div class="kicker">§1 · Nguyên lý rút ra</div>
+  <h2>Một mũi tên xuyên suốt 8 mốc</h2>
+  <div class="bar"></div>
+  <div class="big"><ul>
+    <li><b>wrapper/moat</b> — fork VS Code để mượn ngay distribution và hệ sinh thái extension. Không đấu ở chỗ mình yếu.</li>
+    <li><b>định nghĩa "tốt"</b> — liên tục tự nâng chuẩn: gợi ý tốt = đoán trước cả một sửa đổi → sửa nhiều file → tự thực thi.</li>
+    <li><b>vòng lặp học + x10</b> — agent khép vòng làm-kiểm-sửa, nhắm bước nhảy chứ không cải thiện tuyến tính.</li>
+    <li><b>Vertical AI</b> — tự huấn luyện model Composer theo chiều dọc nghề code, kiểm soát cả chất lượng lẫn chi phí.</li>
+  </ul></div>
+  <div class="warn" style="margin-top:.45cm">
+    <b>Điểm đắt nhất — mốc 1 và mốc 7 là một cặp đối xứng.</b> Mốc 1 <b>dựng</b> lực Habit (fork VS Code để mượn thói quen sẵn có). Mốc 7 <b>tự tay gỡ</b> chính lực đó (hạ IDE xuống một pane). Cursor không trung thành với <b>hình hài sản phẩm</b> — chỉ trung thành với <b>định nghĩa "tốt" tại thời điểm đó</b>, và sẵn sàng phá thứ mình từng dựng khi định nghĩa ấy đổi.
+  </div>
+  <div class="foot"><span>Cursor Teardown</span><span>4</span></div>
+</div>
+
+<!-- 5 CHỌN & LOẠI -->
+<div class="slide">
+  <div class="kicker">§1 · Câu hỏi phản biện CP1</div>
+  <h2>Mốc nào đã cân nhắc rồi loại?</h2>
+  <div class="bar"></div>
+  <table>
+    <tr><th style="width:34%">Mốc bị loại</th><th>Vì sao không đủ tư cách</th></tr>
+    <tr><td><b>Automations (03/2026)</b><br><b>Cursor SDK (04/2026)</b></td><td>Là quyết định sản phẩm thật, <b>cùng nguyên lý với mốc 8</b> — nhưng chỉ tìm được nguồn thứ ba. Loại thay vì dẫn liều, để mốc 8 đứng vững bằng một nguồn chính thức duy nhất.</td></tr>
+    <tr><td><b>Các vòng gọi vốn</b> Seed → Series D, thương vụ SpaceX $60B</td><td><b>Sự kiện tài chính</b> — tiền không tự nó đổi workflow của user. Xếp vào cột <i>Context</i>, không phải cột mốc.</td></tr>
+    <tr><td><b>Sự cố bot CSKH "Sam"</b> (26/04/2025)</td><td><b>Sự cố vận hành</b>, không phải quyết định sản phẩm. Dùng làm context cho mốc 3.</td></tr>
+    <tr><td><b>Bản vá &amp; tối ưu</b> (fix Python, LSP, drag-drop ảnh…)</td><td><b>Bản vá</b> — không đổi workflow. Đúng định nghĩa "mốc rác".</td></tr>
+    <tr><td><b>Composer 2.5, các bản Tab mới</b></td><td><b>Cải thiện tuyến tính</b> cùng một nguyên lý, không chuyển pha → gộp vào mốc gốc.</td></tr>
+    <tr><td><b>Tính năng khu vực</b> (Cursor Start ₹649, iPad, Workspace plugins)</td><td><b>Mở rộng phân phối</b> — cùng giá trị lõi đưa tới kênh mới, không đổi định vị.</td></tr>
+  </table>
+  <p class="note"><b>Nguyên tắc lọc:</b> gộp v0.37 và v0.43 làm một vì cùng cung "Composer" — làm nổi bước chuyển <i>đơn vị công việc</i> thay vì chẻ nhỏ theo số hiệu bản phát hành.</p>
+  <div class="foot"><span>Cursor Teardown</span><span>5</span></div>
+</div>
+
+<!-- 6 USERS -->
+<div class="slide">
+  <div class="kicker">§2 · CP2</div>
+  <h2>Tệp user &amp; JTBD</h2>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="card">
+      <h3>Early adopters (2023–24)</h3>
+      <p><b>Ai:</b> indie hacker, senior engineer, power user MIT/HN. Đã dùng VS Code, tự trả $20/tháng, 1 dev 1 repo, thích thử tool mới.</p>
+      <p><b>JTBD:</b> "Giúp tôi viết code nhanh hơn trong codebase lớn, autocomplete đa file chính xác, đỡ gõ boilerplate."</p>
+      <p style="margin-bottom:0"><b>Cách cũ:</b> Copilot + extension VS Code, copy-paste qua ChatGPT ở tab riêng.</p>
+    </div>
+    <div class="card">
+      <h3>Tệp hiện tại (2025–26)</h3>
+      <p><b>Ai:</b> team enterprise Fortune 500 (Nvidia, Uber, Adobe), Eng Manager, Platform/DevOps. 10–100 dev, <b>30% PR do agent tạo</b>.</p>
+      <p><b>JTBD:</b> "Giúp đội tôi quản lý một đàn agent chạy song song, tự review PR, và giữ quyền kiểm soát logic dù code do AI viết."</p>
+      <p style="margin-bottom:0"><b>Cách cũ:</b> vẫn Copilot + review PR thủ công; thử Devin/Windsurf nhưng thiếu parallel worktrees.</p>
+    </div>
+  </div>
+  <p class="big" style="margin-top:.45cm"><b>Cột mốc gây dịch chuyển:</b> <b>v1.0</b> (Bugbot + Background Agent cho mọi user) là điểm bẻ — biến Cursor từ tool cá nhân thành workflow của đội. <b>Cursor 2.0</b> và <b>3.0</b> đẩy tiếp: khi agent chiếm phần lớn usage, người mua dịch từ lập trình viên sang <b>Eng Manager và CTO</b>.</p>
+  <div class="foot"><span>Đóng góp: C (tệp user) · B, D (dữ liệu cộng đồng)</span><span>6</span></div>
+</div>
+
+<!-- 7 4 FORCES -->
+<div class="slide">
+  <div class="kicker">§2 · Switching cost</div>
+  <h2>4 Forces — và lực nào thật sự giữ chân?</h2>
+  <div class="bar"></div>
+  <div class="forces">
+    <div class="f fa"><b>Push — đẩy khỏi hiện trạng</b>Copilot chậm, thiếu ngữ cảnh repo lớn; review PR thủ công quá tải; agent rời rạc không có harness.</div>
+    <div class="f fb"><b>Pull — kéo sang Cursor</b>Tab phản hồi &lt;300ms, Composer &lt;30s/lượt, agent song song trên worktree, Bugbot sửa lỗi một click.</div>
+    <div class="f fc"><b>Anxiety — lo ngại</b>Hoá đơn usage khó đoán sau vụ pricing; sợ lock-in vào model riêng; lo privacy vì Background Agent cần tắt privacy mode.</div>
+    <div class="f fd"><b>Habit — quán tính giữ lại</b>Phím tắt VS Code quen tay, team đã set rules, Memories và codebase index đã "học" xong — bỏ đi là mất ngữ cảnh.</div>
+  </div>
+  <div class="warn" style="margin-top:.45cm">
+    <b>Trả lời phản biện — nếu lực mạnh nhất biến mất thì sao?</b> Habit là lực mạnh nhất, nhưng nhóm tìm được <b>bằng chứng nó mỏng hơn tưởng</b>: ngay trong thread pricing, một người viết <i>"I've deleted all these wrappers after discovering Claude Code"</i> — rời đi lập tức khi có biến. Và chính Cursor <b>tự tay gỡ lực này ở mốc 7</b>. Kết luận: moat thật không nằm ở thói quen, nên Cursor phải đi tìm moat mới ở tầng hạ tầng (mốc 8).
+  </div>
+  <div class="foot"><span>Quote gốc: thread HN "Clarifying our pricing" — đóng góp B</span><span>7</span></div>
+</div>
+
+<!-- 8 PREDICTIONS -->
+<div class="slide">
+  <div class="kicker">§3 · CP3</div>
+  <h2>Ba dự đoán (6–12 tháng tới)</h2>
+  <div class="bar"></div>
+  <div class="pred">
+    <div class="t">1. Origin GA kèm CI/Merge Queue tự động <span>mở rộng tính năng</span></div>
+    <div class="a"><b>Dự đoán:</b> Cursor đưa Origin ra bản chính thức mùa thu 2026, kèm agent tự sửa CI fail và giải quyết merge conflict. · <b>Lập luận:</b> §1 mốc 8 đã công bố Origin xử lý conflict ở quy mô agent; mốc 6 đã có browser để agent tự test. §2 cho thấy tệp hiện tại là enterprise chạy nhiều agent — cần hạ tầng, không chỉ editor.</div>
+  </div>
+  <div class="pred">
+    <div class="t">2. Nhắm Platform team và người không viết code <span>mở rộng segment</span></div>
+    <div class="a"><b>Dự đoán:</b> đẩy gói cho Platform/DevOps và PM qua SDK + bản mobile, cho phép mô tả logic bằng ngôn ngữ tự nhiên mà không cần mở IDE. · <b>Lập luận:</b> §1 mốc 7 đã hạ IDE xuống một pane; §2 cho thấy người mua đã dịch từ lập trình viên sang Eng Manager — bước tiếp là người định nghĩa sản phẩm nhưng không gõ code.</div>
+  </div>
+  <div class="pred">
+    <div class="t">3. Pricing lai theo compute, chống Big Tech phát miễn phí <span>mô hình kiếm tiền + Big Tech</span></div>
+    <div class="a"><b>Dự đoán:</b> chuyển sang hybrid usage-based (token/compute cho Composer + lưu trữ Origin) kèm gói enterprise. · <b>Lập luận:</b> §1 mốc 6 tự train model rất tốn compute và mốc 8 đổi cả công ty lấy quyền dùng cụm GPU — buộc phải thu theo compute. Khi Claude Code và Codex tích hợp miễn phí, Cursor giữ chân bằng Origin thay vì đấu giá theo seat (§2).</div>
+  </div>
+  <p class="note"><b>Tự tin nhất — dự đoán 1</b> (có waitlist, có keynote, có tuyển người làm hạ tầng Git). <b>Gãy nếu:</b> GitHub ra merge queue cho agent trước, và doanh nghiệp không dám rời GitHub vì lý do tuân thủ — khi đó Origin chỉ còn là tính năng phụ.</p>
+  <div class="foot"><span>Đóng góp: C (dự đoán) · cả nhóm chất vấn &amp; mài lại</span><span>8</span></div>
+</div>
+
+<!-- 9 AI LOG -->
+<div class="slide">
+  <div class="kicker">§4 · CP4</div>
+  <h2>AI Log — khai báo trung thực</h2>
+  <div class="bar"></div>
+  <table>
+    <tr><th style="width:26%">Việc</th><th style="width:20%">AI hay nhóm?</th><th>Nhóm kiểm chứng lại thế nào</th></tr>
+    <tr><td>Tổng hợp mốc từ changelog, blog, báo chí</td><td>AI tổng hợp, nhóm chọn lọc</td><td>Mở lại từng link gốc. <b>Bắt được 1 URL hỏng</b> (changelog 0.43 trả 404 → tìm ra đúng bản <code>0-43-x</code>) và <b>1 lỗi lệch ngày</b> (mốc 1 dẫn thread 15/10/2023 cho sự kiện 03/2023 → thay bằng đúng Show HN 22/03/2023).</td></tr>
+    <tr><td>Chọn 8 cột mốc đưa vào §1</td><td><b>Nhóm</b></td><td>Loại 6 nhóm mốc; tranh luận và thống nhất tiêu chí "một cột mốc = một quyết định sản phẩm" khi hai thành viên xếp gọi vốn khác nhau.</td></tr>
+    <tr><td>Gán nguyên lý cho mỗi mốc</td><td><b>Nhóm</b> (AI gợi ý)</td><td>Bắt buộc mỗi nhãn là khái niệm có tên đã học; loại nhãn đại trà kiểu "để tăng trưởng".</td></tr>
+    <tr><td>Đào nguồn cộng đồng &amp; founder</td><td>AI tìm, nhóm đọc &amp; chọn</td><td>Tự mở từng thread HN. <b>Khai thật hai giới hạn:</b> chưa lấy được transcript đầy đủ podcast a16z nên không trích nguyên văn; chưa xác minh được ngày launch gốc trên Product Hunt.</td></tr>
+    <tr><td>Viết 3 dự đoán</td><td><b>Nhóm</b></td><td>Mỗi dự đoán buộc trỏ về ≥1 mốc §1 hoặc nhận định §2; loại các dự đoán chung chung không có neo.</td></tr>
+  </table>
+  <p class="note"><b>AI làm thay nhiều nhất:</b> bước tra cứu và tổng hợp thô. <b>Bỏ ra thì nhóm còn giải thích được không?</b> Còn — vì việc chọn mốc, gán nguyên lý và dựng lập luận đều do nhóm quyết, và mọi mốc đều đã mở lại link gốc để kiểm.</p>
+  <div class="foot"><span>Cursor Teardown</span><span>9</span></div>
+</div>
+
+<!-- 10 CLOSE -->
+<div class="slide">
+  <div class="ctr">
+    <div class="kicker">Tóm tắt</div>
+    <h1 style="font-size:40px">Cursor không trung thành với hình hài sản phẩm —<br>chỉ trung thành với định nghĩa "tốt" của thời điểm đó.</h1>
+    <p class="big" style="margin-top:.5cm">Fork VS Code để mượn thói quen sẵn có <b>(2023)</b> → nâng đơn vị công việc từ dòng lên agent <b>(2024–25)</b> → tự làm model <b>(2025)</b> → tự tay gỡ chính thói quen mình đã mượn <b>(2026)</b> → đi xuống chiếm tầng hạ tầng <b>(Origin)</b>.</p>
+    <p class="sub" style="margin-top:.9cm;color:#5b4cf5"><b>Cảm ơn — sẵn sàng thảo luận.</b></p>
+  </div>
+  <div class="foot"><span>Nhóm B2 — Khóa 3 · Cursor Teardown</span><span>10</span></div>
+</div>
+
+</body>
+</html>
