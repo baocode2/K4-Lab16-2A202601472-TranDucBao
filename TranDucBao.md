@@ -1,6 +1,6 @@
 # TranDucBao — Thành viên B: Product Hunt & Hacker News
 
-**Nhóm:** K3 — Lab 16 · **Thành viên:** Trần Đức Bảo (2A202601472 — **B**)
+**Nhóm:** B2 — Lab 16 · **Thành viên:** Trần Đức Bảo (2A202601472 — **B**)
 **Vai trò được phân công (CHECKPOINTS.md):** Product Hunt & Hacker News — tìm trang Product Hunt của Cursor (ngày ra mắt), thread HN từ khóa "Cursor IDE", phản hồi early adopters và mốc cộng đồng thảo luận sôi nổi. Kết quả nuôi §1 (context các mốc) và §2 (JTBD/4 forces) của `memo.md`.
 
 ---
@@ -44,7 +44,6 @@
 
 - **CP1-Timeline-Nguyen-Ly-Cursor.md** — Mốc 4: thêm nguồn #3 (sự cố bot CSKH) vào cột Nguồn gốc. Mốc 6: thêm nguồn #5 + TechCrunch, cụ thể hoá mốc thời gian (đổi giá 16/06/2025 → blog phản hồi 05/07/2025 → hoàn tiền tới 4/7).
 - `memo.md` §2 (JTBD/4 forces): 5 quote ở mục 3 trên dùng trực tiếp được, đặc biệt cho lực **Anxiety** và **Habit**.
-- Đã thực hiện hộ thêm phần **Thành viên C** (Tweet & phát biểu Founder) — tách riêng ở [ThanhVienC.md](ThanhVienC.md), không gộp vào đây vì không thuộc phân công gốc của B.
 
 ## 5. Giới hạn cần khai thật trong AI log
 
