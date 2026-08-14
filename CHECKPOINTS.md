@@ -1,7 +1,7 @@
 # Lab 16 — Product Teardown: Checkpoints & Cách làm việc nhóm
 
 > **Sản phẩm đã chốt:** **Cursor** (AI code editor).
-> **Nhóm:** K3 — Lab 16 · **Thành viên:** Lê Quang Huy (A) · Trần Đức Bảo (B) · Đàm Việt Cường (C) · Hoàng Minh Quân (D)
+> **Nhóm B2** — Khóa 3 (K3) · Lab 16 · **Thành viên:** Lê Quang Huy (A) · Trần Đức Bảo (B) · Đàm Việt Cường (C) · Hoàng Minh Quân (D)
 > File này là kế hoạch chung của buổi. Mỗi thành viên đọc trước khi bắt đầu. Deliverable cuối: `memo.md` + `slides.pdf`.
 
 ---

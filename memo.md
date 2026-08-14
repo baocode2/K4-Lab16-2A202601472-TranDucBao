@@ -1,6 +1,6 @@
 # Memo Teardown — Cursor
 
-**Nhóm:** K3 — Lab 16
+**Nhóm B2** — Khóa 3 (K3) · Lab 16
 **Thành viên:** Lê Quang Huy (2A202601821 — A) · Trần Đức Bảo (2A202601472 — B) · Đàm Việt Cường (2A202601566 — C) · Hoàng Minh Quân (2A202601574 — D)
 **Vì sao chọn sản phẩm này:** Cursor là sản phẩm AI-native nơi AI đóng vai trò trung tâm của trải nghiệm (autocomplete dự đoán → agent tự code), có changelog + Wikipedia + phỏng vấn founder đủ dày để dựng >6 mốc, và use case/JTBD rất rõ ("để AI viết & sửa code nhanh hơn ngay trong editor").
 
